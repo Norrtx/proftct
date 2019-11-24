@@ -3,12 +3,12 @@
 
 /* @var $this yii\web\View */
 
-$this->title = 'Skills';
+$this->title = 'Skill';
 ?>
-<div class="site-skills">
-   <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="skills">
+<div class="site-skill">
+   <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="skill">
       <div class="w-100">
-        <h2 class="mb-5">Skills</h2>
+        <h2 class="mb-5">Skill</h2>
            
         <div class="subheading mb-3">Programming Languages &amp; Tools</div>
         <canvas id="Chart" width="910" height="910" 
@@ -97,37 +97,37 @@ $this->title = 'Skills';
         <ul class="fa-ul mb-0">
           <li>
   
-    <div class="subheading mb-3">Codeing</div><br>
+    <div class="subheading mb-3"><?= $skillModel->name ?></div><br>
             <div class="progress">
                 <div class="progress-bar" role="progressbar" aria-valuenow="50" 
                      aria-valuemin="50" aria-valuemax="50" style="width: 18%;background: #bd5d38;">18%
           </div>
     </div>
-    <div class="subheading mb-3">Programming Languages</div><br>
+    <div class="subheading mb-3"><?= $skillModel->name ?></div><br>
             <div class="progress">
                 <div class="progress-bar" role="progressbar" aria-valuenow="50" 
                      aria-valuemin="50" aria-valuemax="50" style="width: 10%;background: #bd5d38;">10%
           </div>
     </div>
-    <div class="subheading mb-3">Data Structures and Algorithms</div><br>
+    <div class="subheading mb-3"><?= $skillModel->name ?></div><br>
             <div class="progress">
                 <div class="progress-bar" role="progressbar" aria-valuenow="50" 
                      aria-valuemin="50" aria-valuemax="50" style="width: 20%; background: #bd5d38;">20%
           </div>
     </div>
-    <div class="subheading mb-3">Text Editors</div><br>
+    <div class="subheading mb-3"><?= $skillModel->name ?></div><br>
             <div class="progress">
                 <div class="progress-bar" role="progressbar" aria-valuenow="50" 
                      aria-valuemin="50" aria-valuemax="50" style="width: 30%; background: #bd5d38;">30%
           </div>
     </div>
-    <div class="subheading mb-3">Databases</div><br>
+    <div class="subheading mb-3"><?= $skillModel->name ?></div><br>
             <div class="progress">
                 <div class="progress-bar" role="progressbar" aria-valuenow="50" 
                      aria-valuemin="50" aria-valuemax="50" style="width: 5%; background: #bd5d38;">5%
           </div>
     </div>
-    <div class="subheading mb-3">Networking Basics</div><br>
+    <div class="subheading mb-3"><?= $skillModel->name ?></div><br>
             <div class="progress">
                 <div class="progress-bar" role="progressbar" aria-valuenow="50" 
                      aria-valuemin="50" aria-valuemax="50" style="width: 15%;  background: #bd5d38;">15%

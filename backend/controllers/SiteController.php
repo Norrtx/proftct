@@ -109,7 +109,7 @@ class SiteController extends Controller
            $n=$request->post('namem');
            $m=$request->post('Major');
            $g=$request->post('gpa');
-           $d=$request->post('dete');
+           $d=$request->post('date');
          
         //    $skillModel = personal::find()->all();
         //     print_r($skillModel);
@@ -129,7 +129,26 @@ class SiteController extends Controller
     public function actionSkill()
     {
         
-
+        $id = Yii::$app->user->identity->id;
+      
+        $request = Yii::$app->request;
+        if ($request->isPost) {
+    
+           $n=$request->post('namem');
+           $s=$request->post('score');
+          
+         
+        //    $skillModel = personal::find()->all();
+        //     print_r($skillModel);
+        //  die();
+            $skill = new skill();      
+            
+            $skill->name = $n;
+            $skill->score = $s;
+            $skill->user_id = $id;
+            $skill->save();
+        }
+       
 
         return $this->render('skill');
     }

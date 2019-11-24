@@ -18,7 +18,7 @@ $this->title = 'resume';
         <div class="subheading mb-5">Email-
           <a href="north_l@email.com"><?= $personalModel->mail ?></a>
         </div>
-        k
+        
         <p class="lead mb-5"><?= $personalModel->discription ?> </p>
         <div class="social-icons">
        

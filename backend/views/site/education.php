@@ -32,7 +32,7 @@ $this->title = 'Education';
     </div>
     <div class="mb-0 ">
     <label for="validationTextarea">DATE</label>
-    <textarea name="dete" class="form-control is-invalid" id="validationTextarea" placeholder="Required example textarea" 
+    <textarea name="date" class="form-control is-invalid" id="validationTextarea" placeholder="Required example textarea" 
      style="margin: 0px 888px 0px 0px; height: 90px; width: 253px;"></textarea>
     <div class="invalid-feedback">
       Please enter a message in the textarea.

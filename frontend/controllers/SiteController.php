@@ -17,6 +17,7 @@ use frontend\models\ContactForm;
 use common\models\personal;
 use common\models\User;
 use common\models\education;
+use common\models\skill;
 
 
 /**
@@ -95,10 +96,12 @@ class SiteController extends Controller
         ]);
 
     }
-     public function actionSkills()
+     public function actionSkill()
     {
-        
-        return $this->render('skills');
+        $skillModel = skill::find()->one();
+        return $this->render('skill',[
+            'skillModel' => $skillModel
+            ]);
     }
     public function actionInterests()
     {
