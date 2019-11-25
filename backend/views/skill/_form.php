@@ -16,7 +16,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'score')->textInput() ?>
 
-    <?= $form->field($model, 'user_id')->textInput() ?>
+   
 
     <?= $form->field($model, 'created_at')->textInput() ?>
 
