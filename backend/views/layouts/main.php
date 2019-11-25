@@ -12,6 +12,8 @@ use common\widgets\Alert;
 
 AppAsset::register($this);
 ?>
+
+
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
 <html lang="<?= Yii::$app->language ?>">
@@ -23,10 +25,12 @@ AppAsset::register($this);
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
 </head>
+
 <body>
 <?php $this->beginBody() ?>
 
 <div class="wrap">
+
     <?php
     NavBar::begin([
       
@@ -37,17 +41,15 @@ AppAsset::register($this);
         ],
     ]);
     $menuItems = [
-        // ['label' => 'Home', 'url' => ['/site/index']],
-        // ['label' => 'Personal', 'url' => ['/site/personal']],
-        // ['label' => 'Education', 'url' => ['/site/education']],
-        // ['label' => 'Skill', 'url' => ['/site/skill']],
+        ['label' => 'Personal', 'url' => ['/site/personal']],
+        ['label' => 'Education', 'url' => ['/site/education']],
+        ['label' => 'Skill', 'url' => ['/site/skill']],
       
-        ['label' => 'Personal', 'url' => ['/personal/index']],
-        ['label' => 'Education', 'url' => ['/education/index']],
-        ['label' => 'Skill', 'url' => ['/skill/index']],
+        ['label' => 'Personal(Edit)', 'url' => ['/personal/index']],
+        ['label' => 'Education(Edit)', 'url' => ['/education/index']],
+        ['label' => 'Skill(Edit)', 'url' => ['/skill/index']],
       
     ];
-    
     if (Yii::$app->user->isGuest) {
         $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
     } else {
@@ -75,6 +77,15 @@ AppAsset::register($this);
         <?= $content ?>
     </div>
 </div>
+
+<footer class="footer">
+    <div class="container">
+        <p class="pull-left">&copy; <?= Html::encode(Yii::$app->name) ?> <?= date('Y') ?></p>
+
+        <p class="pull-right"><?= Yii::powered() ?></p>
+    </div>
+</footer>
+
 <?php $this->endBody() ?>
 </body>
 </html>

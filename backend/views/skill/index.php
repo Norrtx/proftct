@@ -6,7 +6,7 @@ use yii\grid\GridView;
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Skills';
+$this->title = 'Skills-Edit';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="skill-index">
@@ -28,7 +28,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'score',
             'user_id',
             'created_at',
-            //'updated_at',
+            'updated_at',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

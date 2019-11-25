@@ -23,6 +23,7 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'city')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'state')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'user_id')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'zip')->textInput() ?>
 
