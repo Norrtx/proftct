@@ -37,13 +37,10 @@ AppAsset::register($this);
         ],
     ]);
     $menuItems = [
-        // ['label' => 'Home', 'url' => ['/site/index']],
-        // ['label' => 'Personal', 'url' => ['/site/personal']],
-        // ['label' => 'Education', 'url' => ['/site/education']],
-        // ['label' => 'Skill', 'url' => ['/site/skill']],
-      
-        ['label' => 'Personal', 'url' => ['/personal/index']],
-        ['label' => 'Education', 'url' => ['/education/index']],
+        ['label' => 'Home', 'url' => ['/site/index']],
+        ['label' => 'Personal', 'url' => ['/site/personal']],
+        ['label' => 'Education', 'url' => ['/site/education']],
+        ['label' => 'Skill', 'url' => ['/site/skill']],
         ['label' => 'Skill', 'url' => ['/skill/index']],
       
     ];
