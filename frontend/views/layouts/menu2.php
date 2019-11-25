@@ -16,7 +16,7 @@ AppAsset::register($this);
     <!-- <a class="navbar-brand js-scroll-trigger" href="#page-top"> -->
       <!-- <span class="d-block d-lg-none"></span> -->
       <!-- <span class="d-none d-lg-block"> -->
-      <img class="circle"  class="img-fluid img-profile rounded-circle mx-auto mt-2" src="<?=Url::to(['img/profile1.jpg']);?>" align="center" alt=""><br>
+      <img class="circle"  class="img-fluid img-profile rounded-circle mx-auto mt-2" src="<?=Url::to(['']);?>" align="center" alt=""><br>
       <!-- </span> -->
     <!-- </a> -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

@@ -99,41 +99,35 @@ $this->title = 'Skill';
   
     <div class="subheading mb-3"><?= $skillModel->name ?></div><br>
             <div class="progress">
-                <div class="progress-bar" role="progressbar" aria-valuenow="50" 
-                     aria-valuemin="50" aria-valuemax="50" style="width: 18%;background: #bd5d38;">18%
+                <div class="progress-bar" role="progressbar" aria-valuenow="<?= $skillModel->score ?>" 
+                     aria-valuemin="50" aria-valuemax="50" style="width:<?= $skillModel->score ?>%;background: #bd5d38;"><?= $skillModel->score ?>%
           </div>
     </div>
-    <div class="subheading mb-3"><?= $skillModel->name ?></div><br>
+    <div class="subheading mb-3"><?= $skillModel2->name ?></div><br>
             <div class="progress">
                 <div class="progress-bar" role="progressbar" aria-valuenow="50" 
-                     aria-valuemin="50" aria-valuemax="50" style="width: 10%;background: #bd5d38;">10%
+                     aria-valuemin="50" aria-valuemax="50" style="width: <?= $skillModel2->score ?>%;background: #bd5d38;"><?= $skillModel2->score ?>%
           </div>
     </div>
-    <div class="subheading mb-3"><?= $skillModel->name ?></div><br>
+    <div class="subheading mb-3"><?= $skillModel3->name ?></div><br>
             <div class="progress">
                 <div class="progress-bar" role="progressbar" aria-valuenow="50" 
-                     aria-valuemin="50" aria-valuemax="50" style="width: 20%; background: #bd5d38;">20%
+                     aria-valuemin="50" aria-valuemax="50" style="width: <?= $skillModel3->score ?>%; background: #bd5d38;"><?= $skillModel3->score ?>%
           </div>
     </div>
-    <div class="subheading mb-3"><?= $skillModel->name ?></div><br>
+    <div class="subheading mb-3"><?= $skillModel4->name ?></div><br>
             <div class="progress">
                 <div class="progress-bar" role="progressbar" aria-valuenow="50" 
-                     aria-valuemin="50" aria-valuemax="50" style="width: 30%; background: #bd5d38;">30%
+                     aria-valuemin="50" aria-valuemax="50" style="width: <?= $skillModel4->score ?>%; background: #bd5d38;"><?= $skillModel4->score ?>%
           </div>
     </div>
-    <div class="subheading mb-3"><?= $skillModel->name ?></div><br>
+    <div class="subheading mb-3"><?= $skillModel5->name ?></div><br>
             <div class="progress">
                 <div class="progress-bar" role="progressbar" aria-valuenow="50" 
-                     aria-valuemin="50" aria-valuemax="50" style="width: 5%; background: #bd5d38;">5%
+                     aria-valuemin="50" aria-valuemax="50" style="width: <?= $skillModel5->score ?>%; background: #bd5d38;"><?= $skillModel5->score ?>%
           </div>
     </div>
-    <div class="subheading mb-3"><?= $skillModel->name ?></div><br>
-            <div class="progress">
-                <div class="progress-bar" role="progressbar" aria-valuenow="50" 
-                     aria-valuemin="50" aria-valuemax="50" style="width: 15%;  background: #bd5d38;">15%
-          </div>
-    </div>
-
+   
            
         </ul>
   
