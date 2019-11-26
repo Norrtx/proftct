@@ -16,6 +16,7 @@ $this->title = 'Skill';
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.js"></script>
  
     <script>
+    
         var ctx = document.getElementById("Chart");
         var myChart = new Chart(ctx, {
             type: 'bar',
