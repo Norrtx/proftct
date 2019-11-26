@@ -16,7 +16,7 @@ $this->title = 'Skill';
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.js"></script>
  
     <script>
-    
+      //  registerJsVar ($skillModel as $key => $skill);
         var ctx = document.getElementById("Chart");
         var myChart = new Chart(ctx, {
             type: 'bar',
@@ -24,7 +24,7 @@ $this->title = 'Skill';
                 labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
                 datasets: [{
                     label: '# of Votes',
-                    data: [12, 19, 3, 5, 2, 3],
+                    data: [50, 19, 3, 5, 2, 3],
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2)',
                         'rgba(54, 162, 235, 0.2)',

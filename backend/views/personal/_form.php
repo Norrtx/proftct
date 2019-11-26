@@ -11,13 +11,45 @@ use yii\widgets\ActiveForm;
 <div class="personal-form">
 
     <?php $form = ActiveForm::begin(); ?>
-    <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
-    <?= $form->field($model, 'mail')->textInput(['maxlength' => true]) ?>
-    <?= $form->field($model, 'discription')->textInput(['maxlength' => true]) ?>
-    <?= $form->field($model, 'link')->textInput(['maxlength' => true]) ?>
-    <?= $form->field($model, 'city')->textInput(['maxlength' => true]) ?>
-    <?= $form->field($model, 'state')->textInput(['maxlength' => true]) ?>
-    <?= $form->field($model, 'zip')->textInput() ?>
+    <div class="mb-4">
+    <label for="validationTextarea">Name</label>
+    <textarea name="namem" class="form-control is-invalid" id="validationTextarea" placeholder="Required example textarea" 
+     style="margin: 0px 820px 0px 0px; height: 56px; width: 321px;"></textarea>
+    <div class="invalid-feedback">
+      Please enter a message in the textarea.
+    </div><br>
+    <div class="mb-0 ">
+    <label for="validationTextarea">Mail</label>
+    <textarea name="mail" class="form-control is-invalid" id="validationTextarea" placeholder="Required example textarea" 
+     style="margin: 0px 820px 0px 0px; height: 56px; width: 321px;"></textarea>
+    <div class="invalid-feedback">
+      Please enter a message in the textarea.
+    </div><br>
+    <div class="mb-0 ">
+    <label for="validationTextarea">Description</label>
+    <textarea name="description" class="form-control is-invalid" id="validationTextarea" placeholder="Required example textarea" 
+     style="margin: 0px 820px 0px 0px; height: 56px; width: 321px;"></textarea>
+    <div class="invalid-feedback">
+      Please enter a message in the textarea.
+    </div><br>
+    <div class="mb-0 ">
+    <label for="validationTextarea">Link</label>
+    <textarea name="link" class="form-control is-invalid" id="validationTextarea" placeholder="Required example textarea" 
+    style="margin: 0px 820px 0px 0px; height: 56px; width: 321px;"></textarea>
+    <div class="invalid-feedback">
+      Please enter a message in the textarea.
+    </div>
+    <div class="form-row">
+    <div class="col-7">
+      <input name="city" type="text" class="form-control" placeholder="City"><br>
+        </div>
+    <div class="col">
+      <input name="state" type="text" class="form-control" placeholder="State">
+    </div><br>
+    <div class="col">
+      <input name="zip" type="text" class="form-control" placeholder="Zip">
+    </div>
+  </div><br><br>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>

@@ -11,7 +11,7 @@ $this->title = 'Skill';
 <div class="mb-4">
     <label for="validationTextarea">Name</label>
      <select   name=namem  class="custom-select custom-select-lg mb-3">
-  
+     
   <option value="CODING" >CODING</option>
   <option value="PROGRAMMING LANGUAGES">PROGRAMMING LANGUAGES</option>
   <option value="TEXT EDITORS">TEXT EDITORS</option>

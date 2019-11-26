@@ -12,17 +12,38 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
+    
+
     <div class="mb-4">
 
     
-    
-    <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'major')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'gpa')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'date')->textInput() ?>
+<label for="validationTextarea">NAME</label>
+<textarea name="namem" class="form-control is-invalid" id="validationTextarea" placeholder="Required example textarea" 
+required=""  style="margin: 0px 888px 0px 0px; height: 90px; width: 253px;"></textarea>
+<div class="invalid-feedback">
+  Please enter a message in the textarea.
+</div>
+<div class="mb-0 ">
+<label for="validationTextarea">MAJOR</label>
+<textarea name="Major" class="form-control is-invalid" id="validationTextarea" placeholder="Required example textarea" 
+style="margin: 0px 888px 0px 0px; height: 90px; width: 253px;"></textarea>
+<div class="invalid-feedback">
+  Please enter a message in the textarea.
+</div>
+<div class="mb-0 ">
+<label for="validationTextarea">GPA</label>
+<textarea name="gpa" class="form-control is-invalid" id="validationTextarea" placeholder="Required example textarea" 
+ style="margin: 0px 888px 0px 0px; height: 90px; width: 253px;"></textarea>
+<div class="invalid-feedback">
+  Please enter a message in the textarea.
+</div>
+<div class="mb-0 ">
+<label for="validationTextarea">DATE</label>
+<textarea name="date" class="form-control is-invalid" id="validationTextarea" placeholder="Required example textarea" 
+ style="margin: 0px 888px 0px 0px; height: 90px; width: 253px;"></textarea>
+<div class="invalid-feedback">
+  Please enter a message in the textarea.
+</div>
   
 
     

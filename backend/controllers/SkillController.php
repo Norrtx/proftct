@@ -70,11 +70,9 @@ class SkillController extends Controller
     
            $n=$request->post('namem');
            $s=$request->post('score');
-          
+
          
-        //    $skillModel = personal::find()->all();
-        //     print_r($skillModel);
-        //  die();
+
             $skill = new skill();      
             
             $skill->name = $n;
@@ -103,7 +101,8 @@ class SkillController extends Controller
     public function actionUpdate($id)
     {   
         $user_id = Yii::$app->user->identity->id;
-
+        $model = new skill(); 
+        $model ->user_id = $user_id;
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
