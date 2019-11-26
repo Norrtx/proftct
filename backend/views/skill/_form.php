@@ -15,10 +15,7 @@ use yii\widgets\ActiveForm;
      
    <div class="mb-4">
 
-       
 
-
-       
        <?=  $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
        <?= $form->field($model, 'score')->textInput() ?>
     <div class="form-group">
