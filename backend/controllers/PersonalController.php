@@ -64,6 +64,32 @@ class PersonalController extends Controller
      */
     public function actionCreate()
     {
+        $id = Yii::$app->user->identity->id;
+        $request = Yii::$app->request;
+        if ($request->isPost) {
+            
+           $name=$request->post('namem');
+           $mail=$request->post('mail');
+           $des=$request->post('description');
+           $link=$request->post('link');
+           $city=$request->post('city');
+           $state=$request->post('state');
+           $zip=$request->post('zip');
+            
+           
+            $personal = new personal();      
+            
+            $personal->name = $name;
+            $personal->mail = $mail;
+            $personal->discription = $des;
+            $personal->link = $link;
+            $personal->user_id = $id;
+            $personal->state = $state;
+            $personal->city = $city;
+            $personal->zip = $zip;
+            
+            $personal->save();
+        }
         $model = new Personal();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {

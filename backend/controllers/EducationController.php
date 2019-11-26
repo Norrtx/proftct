@@ -64,6 +64,29 @@ class EducationController extends Controller
      */
     public function actionCreate()
     {
+        $id = Yii::$app->user->identity->id;
+     
+        $request = Yii::$app->request;
+        if ($request->isPost) {
+    
+           $n=$request->post('namem');
+           $m=$request->post('Major');
+           $g=$request->post('gpa');
+           $d=$request->post('date');
+         
+        //    $skillModel = personal::find()->all();
+        //     print_r($skillModel);
+        //  die();
+            $education = new education();      
+            
+            $education->name = $n;
+            $education->major = $m;
+            $education->gpa = $g;
+            $education->date = $d;
+            $education->user_id = $id;
+            $education->save();
+        }
+       
         $model = new education();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {

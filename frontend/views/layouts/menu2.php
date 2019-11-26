@@ -31,7 +31,7 @@ AppAsset::register($this);
              <a class="nav-link js-scroll-trigger" href="<?=Url::to(['site/education'])?>">Education</a><br>
               </div>
                     <div class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="<?=Url::to(['site/skill'])?>">Skill</a><br>
+          <a class="nav-link js-scroll-trigger" href="<?=Url::to(['site/skill'])?>">Skills</a><br>
         </div>
                        <div class="nav-item">
           <a class="nav-link js-scroll-trigger" href="<?=Url::to(['site/contact'])?>">Contact</a><br>

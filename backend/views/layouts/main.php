@@ -41,13 +41,13 @@ AppAsset::register($this);
         ],
     ]);
     $menuItems = [
-        ['label' => 'Personal', 'url' => ['/site/personal']],
-        ['label' => 'Education', 'url' => ['/site/education']],
-        ['label' => 'Skill', 'url' => ['/site/skill']],
+        // ['label' => 'Personal', 'url' => ['/site/personal']],
+        // ['label' => 'Education', 'url' => ['/site/education']],
+        // ['label' => 'Skill', 'url' => ['/site/skill']],
       
-        ['label' => 'Personal(Edit)', 'url' => ['/personal/index']],
-        ['label' => 'Education(Edit)', 'url' => ['/education/index']],
-        ['label' => 'Skill(Edit)', 'url' => ['/skill/index']],
+        ['label' => 'Personal', 'url' => ['/personal/index']],
+        ['label' => 'Education', 'url' => ['/education/index']],
+        ['label' => 'Skill', 'url' => ['/skill/index']],
       
     ];
     if (Yii::$app->user->isGuest) {

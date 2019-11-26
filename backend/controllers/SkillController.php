@@ -63,7 +63,25 @@ class SkillController extends Controller
      * @return mixed
      */
     public function actionCreate()
-    {
+    { $id = Yii::$app->user->identity->id;
+      
+        $request = Yii::$app->request;
+        if ($request->isPost) {
+    
+           $n=$request->post('namem');
+           $s=$request->post('score');
+          
+         
+        //    $skillModel = personal::find()->all();
+        //     print_r($skillModel);
+        //  die();
+            $skill = new skill();      
+            
+            $skill->name = $n;
+            $skill->score = $s;
+            $skill->user_id = $id;
+            $skill->save();
+        }
         $model = new skill();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {

@@ -12,17 +12,26 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'score')->textInput() ?>
-
-  
-         
-    <?= $form->field($model, 'user_id')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'created_at')->textInput() ?>
-
-    <?= $form->field($model, 'updated_at')->textInput() ?>
+     
+   <div class="mb-4">
+       <label for="validationTextarea">Name</label>
+        <select   name=namem  class="custom-select custom-select-lg mb-3">
+     
+     <option value="CODING" >CODING</option>
+     <option value="PROGRAMMING LANGUAGES">PROGRAMMING LANGUAGES</option>
+     <option value="TEXT EDITORS">TEXT EDITORS</option>
+     <option value="DATABASES">DATABASES</option>
+     <option value="NETWORKING BASICS">NETWORKING BASICS</option>
+   </select>
+   
+       </div><br>
+       <div class="mb-0 ">
+       <label for="validationTextarea">Score</label>
+       <textarea name="score" class="form-control is-invalid" id="validationTextarea" placeholder="Required example textarea" 
+       required="" style="margin: 0px 820px 0px 0px; height: 56px; width: 321px;"></textarea>
+       <div class="invalid-feedback">
+         Please enter a message in the textarea.
+       </div><br>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
