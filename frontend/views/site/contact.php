@@ -26,10 +26,8 @@ $this->title = 'Contact';
           </ul>
      
         <div class="col-xs-12"> 
-        <iframe src="https://www.google.com/maps/embed?pb=!1m25!1m11!1m3!1d153.16493011844327!2d100.48403114998126!3d15.6323078235334!2m2!1f43.61190450476259!2f45!3
-          m2!1i1024!2i768!4f35!4m11!3e0!4m3!3m2!1d15.6335318!2d100.485044!4m5!1s0x30e02e103bd41685%3A0x404fb54b009c2d0!2sTha%20Tako%2C%20Tha%20Tako%20District%2C%20
-          Nakhon%20Sawan%2060160!3m2!1d15.6361001!2d100.4733789!5e1!3m2!1sen
-          !2sth!4v1573721735088!5m2!1sen!2sth" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m8!1m3!1d987.6116628354984!2d100.4848523741528!3d15.633450630282493!3m2!1i1024!2i768!4f13.1!4m6!3e0!4m0!4m3!3m2!1d15.6333956!2d100.4850137!5e1!3m2!1sen!2sth!4v1574764346603!5m2!1sen!2sth"
+           width="400" height="300" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
       </div>
       </div>
 <!-- Contact -->
