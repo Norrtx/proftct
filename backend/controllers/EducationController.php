@@ -106,7 +106,8 @@ class EducationController extends Controller
      * @throws NotFoundHttpException if the model cannot be found
      */
     public function actionUpdate($id)
-    {
+    {   
+        $user_id = Yii::$app->user->identity->id;
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {

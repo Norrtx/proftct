@@ -13,24 +13,13 @@ use yii\widgets\ActiveForm;
     <?php $form = ActiveForm::begin(); ?>
 
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
-
     <?= $form->field($model, 'mail')->textInput(['maxlength' => true]) ?>
-
     <?= $form->field($model, 'discription')->textInput(['maxlength' => true]) ?>
-
     <?= $form->field($model, 'link')->textInput(['maxlength' => true]) ?>
-
     <?= $form->field($model, 'city')->textInput(['maxlength' => true]) ?>
-
     <?= $form->field($model, 'state')->textInput(['maxlength' => true]) ?>
-    <?= $form->field($model, 'user_id')->textInput(['maxlength' => true]) ?>
-
     <?= $form->field($model, 'zip')->textInput() ?>
-
- 
-
     <?= $form->field($model, 'created_at')->textInput() ?>
-
     <?= $form->field($model, 'updated_at')->textInput() ?>
 
     <div class="form-group">

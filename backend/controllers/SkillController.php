@@ -8,7 +8,7 @@ use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-
+use common\models\User;
 /**
  * SkillController implements the CRUD actions for skill model.
  */
@@ -101,7 +101,9 @@ class SkillController extends Controller
      * @throws NotFoundHttpException if the model cannot be found
      */
     public function actionUpdate($id)
-    {
+    {   
+        $user_id = Yii::$app->user->identity->id;
+
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {

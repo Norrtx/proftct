@@ -96,38 +96,15 @@ $this->title = 'Skill';
         <div class="subheading mb-3">Workflow</div><br>
         <ul class="fa-ul mb-0">
           <li>
-  
-    <div class="subheading mb-3"><?= $skillModel->name ?></div><br>
-            <div class="progress">
-                <div class="progress-bar" role="progressbar" aria-valuenow="<?= $skillModel->score ?>" 
-                     aria-valuemin="50" aria-valuemax="50" style="width:<?= $skillModel->score ?>%;background: #bd5d38;"><?= $skillModel->score ?>%
-          </div>
-    </div>
-    <div class="subheading mb-3"><?= $skillModel2->name ?></div><br>
-            <div class="progress">
-                <div class="progress-bar" role="progressbar" aria-valuenow="50" 
-                     aria-valuemin="50" aria-valuemax="50" style="width: <?= $skillModel2->score ?>%;background: #bd5d38;"><?= $skillModel2->score ?>%
-          </div>
-    </div>
-    <div class="subheading mb-3"><?= $skillModel3->name ?></div><br>
-            <div class="progress">
-                <div class="progress-bar" role="progressbar" aria-valuenow="50" 
-                     aria-valuemin="50" aria-valuemax="50" style="width: <?= $skillModel3->score ?>%; background: #bd5d38;"><?= $skillModel3->score ?>%
-          </div>
-    </div>
-    <div class="subheading mb-3"><?= $skillModel4->name ?></div><br>
-            <div class="progress">
-                <div class="progress-bar" role="progressbar" aria-valuenow="50" 
-                     aria-valuemin="50" aria-valuemax="50" style="width: <?= $skillModel4->score ?>%; background: #bd5d38;"><?= $skillModel4->score ?>%
-          </div>
-    </div>
-    <div class="subheading mb-3"><?= $skillModel5->name ?></div><br>
-            <div class="progress">
-                <div class="progress-bar" role="progressbar" aria-valuenow="50" 
-                     aria-valuemin="50" aria-valuemax="50" style="width: <?= $skillModel5->score ?>%; background: #bd5d38;"><?= $skillModel5->score ?>%
-          </div>
-    </div>
-   
+
+          <?php foreach ($skillModel as $key => $skill) { ?>
+            <div class="subheading mb-3"><?= $skill->name ?></div><br>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" aria-valuenow="<?= $skill->score ?>" 
+                             aria-valuemin="50" aria-valuemax="50" style="width:<?= $skill->score ?>%;background: #bd5d38;"><?= $skill->score ?>%
+              </div>
+            </div>
+          <?php } ?>
            
         </ul>
   

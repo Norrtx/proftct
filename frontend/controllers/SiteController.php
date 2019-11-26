@@ -98,35 +98,12 @@ class SiteController extends Controller
     }
      public function actionSkill()
     {   
-        $skillModel = skill::find()
-        ->where(['id' =>1])
-        ->orderBy('name')
-        ->one();
-        $skillModel2 = skill::find()
-        ->where(['id' =>2])
-        ->orderBy('name')
-        ->one();
-        $skillModel3 = skill::find()
-        ->where(['id' =>3])
-        ->orderBy('name')
-        ->one();
-        $skillModel4 = skill::find()
-        ->where(['id' =>4])
-        ->orderBy('name')
-        ->one();
-        $skillModel5 = skill::find()
-        ->where(['id' =>5])
-        ->orderBy('name')
-        ->one();
-      
+       
+        $skillModel = skill::find()->all();
     
         return $this->render('skill',[
             'skillModel' => $skillModel,
-            'skillModel2' => $skillModel2,
-            'skillModel3' => $skillModel3,
-            'skillModel4' => $skillModel4,
-            'skillModel5' => $skillModel5, 
-           
+            
             
             ]);
     }

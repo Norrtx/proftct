@@ -12,13 +12,13 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
+    <?=  $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'score')->textInput() ?>
 
   
          
-    <?= $form->field($model, 'user_id')->textInput(['maxlength' => true]) ?>
+   
 
     <?= $form->field($model, 'created_at')->textInput() ?>
 
