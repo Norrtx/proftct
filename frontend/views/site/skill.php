@@ -10,12 +10,27 @@ $this->title = 'Skill';
       <div class="w-100">
         <h2 class="mb-5">Skill</h2>
            
-        <div class="subheading mb-3">Programming Languages &amp; Tools</div>
-        <canvas id="Chart" width="910" height="910" 
+         <div class="subheading mb-3">Workflow</div><br>
+        <ul class="fa-ul mb-0">
+          <li>
+
+          <?php foreach ($skillModel as $key => $skill) { ?>
+        
+            <div class="subheading mb-3"><?= $skill->name ?></div><br>
+            <div class="progress">
+  <div class="progress-bar progress-bar-striped active" role="progressbar;" aria-valuenow="<?= $skill->score ?>" 
+  aria-valuemin="0" aria-valuemax="100" style="width: <?= $skill->score ?>%;background-color: #bf500f;">
+  <?= $skill->score ?>%<span class="sr-only"><?= $skill->score ?>%</span>
+  </div>
+</div>
+          <?php } ?>
+           
+     
+        <!-- <canvas id="Chart" width="910" height="910" 
   style="FONT-WEIGHT: 500;FONT-WEIGHT: 500;display: block;width:500px;height:300px;"></canvas>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.js"></script>
- 
-    <script>
+    <ul class="list-inline dev-icons"> -->
+    <!-- <script>
       //  registerJsVar ($skillModel as $key => $skill);
         var ctx = document.getElementById("Chart");
         var myChart = new Chart(ctx, {
@@ -54,60 +69,8 @@ $this->title = 'Skill';
                 }
             }
         });
-        </script> 
-        <ul class="list-inline dev-icons">
-          <li class="list-inline-item">
-            <i class="fab fa-html5"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="fab fa-css3-alt"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="fab fa-js-square"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="fab fa-angular"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="fab fa-react"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="fab fa-node-js"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="fab fa-sass"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="fab fa-less"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="fab fa-wordpress"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="fab fa-gulp"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="fab fa-grunt"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="fab fa-npm"></i>
-          </li>
-        </ul>
-
-        <div class="subheading mb-3">Workflow</div><br>
-        <ul class="fa-ul mb-0">
-          <li>
-
-          <?php foreach ($skillModel as $key => $skill) { ?>
-            <div class="subheading mb-3"><?= $skill->name ?></div><br>
-              <div class="progress">
-                <div class="progress-bar" role="progressbar" aria-valuenow="<?= $skill->score ?>" 
-                             aria-valuemin="50" aria-valuemax="50" style="width:<?= $skill->score ?>%;background: #bd5d38;"><?= $skill->score ?>%
-              </div>
-            </div>
-          <?php } ?>
-           
-        </ul>
+        </script>  -->
+        
   
 </div>
   </section>
