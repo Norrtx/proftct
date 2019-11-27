@@ -101,9 +101,8 @@ class SkillController extends Controller
     public function actionUpdate($id)
     {   
         $user_id = Yii::$app->user->identity->id;
-        $model = new skill(); 
-        $model ->user_id = $user_id;
         $model = $this->findModel($id);
+        $model ->user_id = $user_id;
         $request = Yii::$app->request;
         if ($request->isPost) {
             $model->user_id = $user_id;
