@@ -47,7 +47,7 @@ AppAsset::register($this);
 <?php $this->beginBody() ?>
 
     <?= $this->render('menu2') ?>
-
+  
     <div class="container">
         <?= Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],

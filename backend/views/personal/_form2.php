@@ -19,6 +19,9 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'city')->textInput(['maxlength' => true]) ?>
     <?= $form->field($model, 'state')->textInput(['maxlength' => true]) ?>
     <?= $form->field($model, 'zip')->textInput() ?>
+    <?= $form->field($model, 'latitude')->textInput() ?>
+    <?= $form->field($model, 'longitude')->textInput() ?>
+    <?= $form->field($model, 'user_id')->textInput(['disabled' => 'disabled']) ?>
     <?= $form->field($model, 'created_at')->textInput() ?>
     <?= $form->field($model, 'updated_at')->textInput() ?>
 

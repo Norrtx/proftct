@@ -21,7 +21,10 @@ class m191121_065107_cerate_personal_table extends Migration
             'city' => $this->string(),
             'state' => $this->string(),
             'zip' => $this->integer(),
-             'user_id'=>$this->integer(),
+            'latitude' => $this->decimal(10,7),
+            'longitude' => $this->decimal(10,7),
+            
+            'user_id'=>$this->integer(),
             
             'created_at' => $this->integer(),
             'updated_at' => $this->integer(),

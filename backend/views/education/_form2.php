@@ -19,6 +19,8 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'gpa')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'date')->textInput() ?>
+    
+    <?= $form->field($model, 'user_id')->textInput(['disabled' => 'disabled']) ?>
   
     <?= $form->field($model, 'created_at')->textInput() ?>
 

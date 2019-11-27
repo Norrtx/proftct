@@ -13,7 +13,7 @@ $this->title = 'Skill';
          <div class="subheading mb-3">Workflow</div><br>
         <ul class="fa-ul mb-0">
           <li>
-
+        
           <?php foreach ($skillModel as $key => $skill) { ?>
         
             <div class="subheading mb-3"><?= $skill->name ?></div><br>
@@ -22,8 +22,9 @@ $this->title = 'Skill';
   aria-valuemin="0" aria-valuemax="100" style="width: <?= $skill->score ?>%;background-color: #bf500f;">
   <?= $skill->score ?>%<span class="sr-only"><?= $skill->score ?>%</span>
   </div>
-</div>
+</div>  
           <?php } ?>
+
            
      
         <!-- <canvas id="Chart" width="910" height="910" 

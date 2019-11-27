@@ -41,15 +41,21 @@ use yii\widgets\ActiveForm;
                                             </div>
                                                 <div class="form-row">
                                                        <div class="col-7">
-                                                           <input name="city" type="text" class="form-control" placeholder="City"><br>
+                                                           <input name="city" type="text" class="form-control" placeholder="Prefecture"><br>
                                                        </div>
                                                                <div class="col">
                                                                    <input name="state" type="text" class="form-control" placeholder="State">
                                                                </div><br>
                                                                          <div class="col">
-                                                                             <input name="zip" type="text" class="form-control" placeholder="Zip">
-                                                                        </div>
-                                                 </div><br><br>
+                                                                             <input name="zip" type="text" class="form-control" placeholder="zip code">
+                                                                        </div><br>
+                                                                        <div class="col">
+                                                                             <input name="latitude" type="text" class="form-control" placeholder="latitude">
+                                                                        </div><br>
+                                                                        <div class="col">
+                                                                             <input name="longitude" type="text" class="form-control" placeholder="longitude">
+                                                                        </div><br>
+                                                                </div><br><br>
                                                                                <div class="form-group">
                                                                                        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
                                                                                </div>

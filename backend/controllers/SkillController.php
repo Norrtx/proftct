@@ -104,7 +104,11 @@ class SkillController extends Controller
         $model = new skill(); 
         $model ->user_id = $user_id;
         $model = $this->findModel($id);
-
+        $request = Yii::$app->request;
+        if ($request->isPost) {
+            $model->user_id = $user_id;
+            $model->save();
+        }
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         }

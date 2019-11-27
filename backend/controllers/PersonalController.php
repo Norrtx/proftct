@@ -75,9 +75,10 @@ class PersonalController extends Controller
            $city=$request->post('city');
            $state=$request->post('state');
            $zip=$request->post('zip');
-            
+           $latitude=$request->post('latitude');
+           $longitude=$request->post('longitude');
            
-            $personal = new personal();      
+           $personal = new personal();      
             
             $personal->name = $name;
             $personal->mail = $mail;
@@ -87,6 +88,8 @@ class PersonalController extends Controller
             $personal->state = $state;
             $personal->city = $city;
             $personal->zip = $zip;
+            $personal->latitude = $latitude;
+            $personal->longitude = $longitude;
             
             $personal->save();
         }
@@ -112,6 +115,12 @@ class PersonalController extends Controller
     {   
         $user_id = Yii::$app->user->identity->id;
         $model = $this->findModel($id);
+        $model ->user_id = $user_id;
+        $request = Yii::$app->request;
+        if ($request->isPost) {
+            $model->user_id = $user_id;
+            $model->save();
+        }
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);

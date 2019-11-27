@@ -31,6 +31,8 @@ $this->params['breadcrumbs'][] = $this->title;
             'city',
             'state',
             'zip',
+            'latitude',
+            'longitude',
             'user_id',
             'created_at',
             'updated_at',
