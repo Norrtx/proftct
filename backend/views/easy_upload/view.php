@@ -4,14 +4,14 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
-/* @var $model common\models\Personal */
+/* @var $model common\models\easyUpload */
 
 $this->title = $model->name;
-$this->params['breadcrumbs'][] = ['label' => 'Personals', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Easy Uploads', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
-<div class="personal-view">
+<div class="easy-upload-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
@@ -31,15 +31,9 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => [
             'id',
             'name',
-            'mail',
-            'discription',
-            'link',
-            'city',
-            'state',
-            'zip',
-            'latitude',
-            'longitude',
-
+            'surname',
+            'photo',
+            'photos:ntext',
             'user_id',
             'created_at',
             'updated_at',

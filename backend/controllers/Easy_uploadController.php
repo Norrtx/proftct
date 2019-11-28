@@ -1,15 +1,18 @@
 <?php
+
 namespace backend\controllers;
+
 use Yii;
-use common\models\Personal;
+use common\models\easyUpload;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+
 /**
- * PersonalController implements the CRUD actions for Personal model.
+ * Easy_uploadController implements the CRUD actions for easyUpload model.
  */
-class PersonalController extends Controller
+class Easy_uploadController extends Controller
 {
     /**
      * {@inheritdoc}
@@ -25,21 +28,24 @@ class PersonalController extends Controller
             ],
         ];
     }
+
     /**
-     * Lists all Personal models.
+     * Lists all easyUpload models.
      * @return mixed
      */
     public function actionIndex()
     {
         $dataProvider = new ActiveDataProvider([
-            'query' => Personal::find(),
+            'query' => easyUpload::find(),
         ]);
+
         return $this->render('index', [
             'dataProvider' => $dataProvider,
         ]);
     }
+
     /**
-     * Displays a single Personal model.
+     * Displays a single easyUpload model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -50,76 +56,53 @@ class PersonalController extends Controller
             'model' => $this->findModel($id),
         ]);
     }
+
     /**
-     * Creates a new Personal model.
+     * Creates a new easyUpload model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $id = Yii::$app->user->identity->id;
-        $request = Yii::$app->request;
-        if ($request->isPost) {
-            
-           $name=$request->post('namem');
-           $mail=$request->post('mail');
-           $des=$request->post('description');
-           $link=$request->post('link');
-           $city=$request->post('city');
-           $state=$request->post('state');
-           $zip=$request->post('zip');
-           $latitude=$request->post('latitude');
-           $longitude=$request->post('longitude');
-           
-           $personal = new personal();      
-            
-            $personal->name = $name;
-            $personal->mail = $mail;
-            $personal->discription = $des;
-            $personal->link = $link;
-            $personal->user_id = $id;
-            $personal->state = $state;
-            $personal->city = $city;
-            $personal->zip = $zip;
-            $personal->latitude = $latitude;
-            $personal->longitude = $longitude;
-            
-            $personal->save();
-        }
-        $model = new Personal();
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        $model = new easyUpload();
+
+        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+            $model->photo = $model->upload($model,'photo');
+            $model->save();
             return $this->redirect(['view', 'id' => $model->id]);
-        }
+        } else {
+
         return $this->render('create', [
             'model' => $model,
         ]);
+        }
     }
+
     /**
-     * Updates an existing Personal model.
+     * Updates an existing easyUpload model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
     public function actionUpdate($id)
-    {   
-        $user_id = Yii::$app->user->identity->id;
+    {
         $model = $this->findModel($id);
-        $model ->user_id = $user_id;
-        $request = Yii::$app->request;
-        if ($request->isPost) {
-            $model->user_id = $user_id;
+
+        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+            $model->photo = $model->upload($model,'photo');
             $model->save();
-        }
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
-        }
+        }  else {
+
         return $this->render('update', [
             'model' => $model,
         ]);
+        }
     }
+
     /**
-     * Deletes an existing Personal model.
+     * Deletes an existing easyUpload model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -128,20 +111,23 @@ class PersonalController extends Controller
     public function actionDelete($id)
     {
         $this->findModel($id)->delete();
+
         return $this->redirect(['index']);
     }
+
     /**
-     * Finds the Personal model based on its primary key value.
+     * Finds the easyUpload model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Personal the loaded model
+     * @return easyUpload the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Personal::findOne($id)) !== null) {
+        if (($model = easyUpload::findOne($id)) !== null) {
             return $model;
         }
+
         throw new NotFoundHttpException('The requested page does not exist.');
     }
 }

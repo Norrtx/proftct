@@ -43,6 +43,7 @@ AppAsset::register($this);
         ['label' => 'Personal', 'url' => ['/personal/index']],
         ['label' => 'Education', 'url' => ['/education/index']],
         ['label' => 'Skill', 'url' => ['/skill/index']],
+        ['label' => 'Photo', 'url' => ['/easy_upload/index']],
       
     ];
     if (Yii::$app->user->isGuest) {
