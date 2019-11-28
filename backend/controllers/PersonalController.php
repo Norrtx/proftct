@@ -8,7 +8,7 @@ use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-
+use yii\web\UploadedFile;
 /**
  * PersonalController implements the CRUD actions for Personal model.
  */
@@ -43,7 +43,20 @@ class PersonalController extends Controller
             'dataProvider' => $dataProvider,
         ]);
     }
+    public function actionUpload()
+    {
+        $model = new UploadForm();
 
+        if (Yii::$app->request->isPost) {
+            $model->file = UploadedFile::getInstance($model, 'file');
+
+            if ($model->file && $model->validate()) {                
+                $model->file->saveAs('uploads/' . $model->file->baseName . '.' . $model->file->extension);
+            }
+        }
+
+        return $this->render('upload', ['model' => $model]);
+    }
     /**
      * Displays a single Personal model.
      * @param integer $id
@@ -64,21 +77,54 @@ class PersonalController extends Controller
      */
     public function actionCreate()
     {
+
+        // $num = pathinfo(basaename($_FILES['pro_img']['name']), pathinfo_EXtention());
+        // $new_img_name='img_'.uniqid().".".$num;
+        // $img_path = "img/";
+        // $upload_path = $img_path.$new_img_name;
+        // move_uploaded_file($_FILES['pro_img']['tem_name'],$upload_path);
+         
+        // $pro_img=$new_img_name;
+        
+
         $id = Yii::$app->user->identity->id;
         $request = Yii::$app->request;
         if ($request->isPost) {
+            $personal = new personal(); 
+           $name = $request->post('namem');
+           $mail = $request->post('mail');
+           $des = $request->post('description');
+           $link = $request->post('link');
+           $city = $request->post('city');
+           $state = $request->post('state');
+           $zip = $request->post('zip');
+           $latitude = $request->post('latitude');
+           $longitude = $request->post('longitude');
+        //    $pro_img = $request->post('pro_img');
             
-           $name=$request->post('namem');
-           $mail=$request->post('mail');
-           $des=$request->post('description');
-           $link=$request->post('link');
-           $city=$request->post('city');
-           $state=$request->post('state');
-           $zip=$request->post('zip');
-           $latitude=$request->post('latitude');
-           $longitude=$request->post('longitude');
-           
-           $personal = new personal();      
+            $pathFolder = "uploads/" . str_pad($id, 5, '0', STR_PAD_LEFT) . "/";
+            if (!file_exists($pathFolder)) {
+                if (mkdir($pathFolder, 0755, true)) { } else {
+                    die('failed');
+                }
+            }
+            $pro_img = UploadedFile::getInstanceByName('pro_img');
+            
+            if (isset($pro_img->error) && $pro_img->error == 0) {
+                $curFileName = $id . '_' . time() . '_';
+                $imageName = '.' . $pro_img->getExtension();
+                $path = $pathFolder . pathinfo($curFileName, PATHINFO_FILENAME);
+                try {
+                    if ($pro_img->saveAs($path . $imageName)) {
+                        $slip_name = $curFileName.$imageName;
+                      
+                        $personal->pro_img = $slip_name;
+                    }
+                } catch (Exception $e) {
+                }
+            }
+
+                
             
             $personal->name = $name;
             $personal->mail = $mail;
@@ -90,6 +136,7 @@ class PersonalController extends Controller
             $personal->zip = $zip;
             $personal->latitude = $latitude;
             $personal->longitude = $longitude;
+         
             
             $personal->save();
         }

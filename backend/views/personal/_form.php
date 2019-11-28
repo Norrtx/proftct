@@ -10,7 +10,9 @@ use yii\widgets\ActiveForm;
 
 <div class="personal-form">
 
-    <?php $form = ActiveForm::begin(); ?>
+    <?php $form = ActiveForm::begin([
+    'options' => ['enctype' => 'multipart/form-data']]); ?>
+   
          <div class="mb-4">
             <label for="validationTextarea">Name</label>
               <textarea name="namem" class="form-control is-invalid" id="validationTextarea" placeholder="Required example textarea" 
@@ -55,6 +57,10 @@ use yii\widgets\ActiveForm;
                                                                         <div class="col">
                                                                              <input name="longitude" type="text" class="form-control" placeholder="longitude">
                                                                         </div><br>
+                                                                      <div class="custom-file">
+                                                                           <input type="file" name="pro_img" class="custom-file-input" id="customFile">
+                                                                           <label class="custom-file-label" for="customFile">Choose file</label>
+                                                                      </div>
                                                                 </div><br><br>
                                                                                <div class="form-group">
                                                                                        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>

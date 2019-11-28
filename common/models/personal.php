@@ -15,8 +15,9 @@ use Yii;
  * @property string $city
  * @property string $state
  * @property int $zip
- * @property int $latitude
- * @property int $longitude
+ * @property string $pro_img
+ * @property string $latitude
+ * @property string $longitude
  * @property int $user_id
  * @property int $created_at
  * @property int $updated_at
@@ -37,9 +38,9 @@ class personal extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['zip',  'user_id', 'created_at', 'updated_at'], 'integer'],
-            [['latitude', 'longitude'],'number','max'=>255],
-            [['name', 'mail', 'discription', 'link', 'city', 'state'], 'string', 'max' => 255],
+            [['zip', 'user_id', 'created_at', 'updated_at'], 'integer'],
+            [['latitude', 'longitude'], 'number'],
+            [['name', 'mail', 'discription', 'link', 'city', 'state', 'pro_img'], 'string', 'max' => 255],
         ];
     }
 
@@ -57,6 +58,7 @@ class personal extends \yii\db\ActiveRecord
             'city' => 'City',
             'state' => 'State',
             'zip' => 'Zip',
+            'pro_img' => 'Pro Img',
             'latitude' => 'Latitude',
             'longitude' => 'Longitude',
             'user_id' => 'User ID',

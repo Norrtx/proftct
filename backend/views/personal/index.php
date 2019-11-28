@@ -33,6 +33,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'zip',
             'latitude',
             'longitude',
+            'pro_img' ,
             'user_id',
             'created_at',
             'updated_at',
