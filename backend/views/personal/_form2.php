@@ -10,7 +10,8 @@ use yii\widgets\ActiveForm;
 
 <div class="personal-form">
 
-    <?php $form = ActiveForm::begin(); ?>
+    <?php $form = ActiveForm::begin([
+    'options' => ['enctype' => 'multipart/form-data']]); ?>
 
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
     <?= $form->field($model, 'mail')->textInput(['maxlength' => true]) ?>
@@ -22,6 +23,10 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'latitude')->textInput() ?>
     <?= $form->field($model, 'longitude')->textInput() ?>
     <?= $form->field($model, 'user_id')->textInput(['disabled' => 'disabled']) ?>
+    <div class="custom-file">
+    <input type="file" name="pro_img2" class="custom-file-input" id="customFile">
+    <label class="custom-file-label" for="customFile">Choose file</label>
+    </div>
     <?= $form->field($model, 'created_at')->textInput() ?>
     <?= $form->field($model, 'updated_at')->textInput() ?>
 

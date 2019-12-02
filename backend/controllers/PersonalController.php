@@ -87,7 +87,7 @@ class PersonalController extends Controller
         // $pro_img=$new_img_name;
         
 
-        $id = Yii::$app->user->identity->id;
+        $user_id = Yii::$app->user->identity->id;
         $request = Yii::$app->request;
         if ($request->isPost) {
             $personal = new personal(); 
@@ -102,7 +102,9 @@ class PersonalController extends Controller
            $longitude = $request->post('longitude');
         //    $pro_img = $request->post('pro_img');
             
-            $pathFolder = "uploads/" . str_pad($id, 5, '0', STR_PAD_LEFT) . "/";
+            // $pathFolder = "uploads/" . str_pad($id, 5, '0', STR_PAD_LEFT) . "/";
+            $pathFolder = "../../frontend/web/uploads/" . str_pad($user_id, 5, '0', STR_PAD_LEFT) . "/";
+
             if (!file_exists($pathFolder)) {
                 if (mkdir($pathFolder, 0755, true)) { } else {
                     die('failed');
@@ -111,7 +113,7 @@ class PersonalController extends Controller
             $pro_img = UploadedFile::getInstanceByName('pro_img');
             
             if (isset($pro_img->error) && $pro_img->error == 0) {
-                $curFileName = $id . '_' . time() . '_';
+                $curFileName = $user_id . '_' . time() . '_';
                 $imageName = '.' . $pro_img->getExtension();
                 $path = $pathFolder . pathinfo($curFileName, PATHINFO_FILENAME);
                 try {
@@ -130,7 +132,7 @@ class PersonalController extends Controller
             $personal->mail = $mail;
             $personal->discription = $des;
             $personal->link = $link;
-            $personal->user_id = $id;
+            $personal->user_id = $user_id;
             $personal->state = $state;
             $personal->city = $city;
             $personal->zip = $zip;
@@ -159,7 +161,7 @@ class PersonalController extends Controller
      * @throws NotFoundHttpException if the model cannot be found
      */
     public function actionUpdate($id)
-    {   
+    {   $model = new personal(); 
         $user_id = Yii::$app->user->identity->id;
         $model = $this->findModel($id);
         $model ->user_id = $user_id;
@@ -168,7 +170,30 @@ class PersonalController extends Controller
             $model->user_id = $user_id;
             $model->save();
         }
-
+        $pathFolder = "../../frontend/web/uploads/" . str_pad($user_id, 5, '0', STR_PAD_LEFT) . "/";
+        if (!file_exists($pathFolder)) {
+            if (mkdir($pathFolder, 0755, true)) { } else {
+                die('failed');
+            }
+        }
+        $pro_img = UploadedFile::getInstanceByName('pro_img2');
+       
+        if (isset($pro_img->error) && $pro_img->error == 0) {
+            $curFileName = $user_id . '_' . time() . '_';
+            $imageName = '.' . $pro_img->getExtension();
+          
+            $path = $pathFolder . pathinfo($curFileName, PATHINFO_FILENAME);
+            try {
+                if ($pro_img->saveAs($path . $imageName)) {
+                    $slip_name = $curFileName.$imageName;
+                  
+                    $model->pro_img = $slip_name;
+                }
+            } catch (Exception $e) {
+            }
+              
+        }
+      
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         }

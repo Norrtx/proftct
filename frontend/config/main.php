@@ -43,8 +43,10 @@ return [
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
-            'rules' => [
-                
+            'rules' => [  '<controller:\w+>/<id:\d+>' => '<controller>/index',
+          
+            
+        
             ],
         ],
         

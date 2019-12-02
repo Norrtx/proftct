@@ -2,6 +2,7 @@
 
 /* @var $this yii\web\View */
 use yii\helpers\Url;
+Yii::$app->urlManager->createUrl(['site/index', 'id' => 4]);
 $this->title = 'resume';
 
 ?>

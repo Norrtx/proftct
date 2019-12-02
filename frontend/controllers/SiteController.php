@@ -49,13 +49,14 @@ class SiteController extends Controller
      *
      * @return mixed
      */
- public function actionIndex()
-    {
+    
+ public function actionIndex($id)
+    {    echo 'action Index in site controller and ID ='.$id;
         // $id = Yii::$app->user->identity->id;
         $personalModel = personal::find()->one();
       
         return $this->render('index', [
-            'personalModel' => $personalModel 
+            'personalModel' => $personalModel ,
         ]);
 
     }
