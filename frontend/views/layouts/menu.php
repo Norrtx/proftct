@@ -1,15 +1,25 @@
 
 <?php 
-use yii\bootstrap\NavBar;
+use yii\helpers\Url;
+use yii\helpers\Html;
 use yii\bootstrap\Nav;
-
+use yii\bootstrap\NavBar;
+use yii\widgets\Breadcrumbs;
+use frontend\assets\AppAsset;
+use common\widgets\Alert;
+use common\models\personal;
+$id = Yii::$app->request->get('id');
+$personal=personal::find()->where(['user_id' => $id])
+->one();
+$home = ['/site/index'];
 ?>
  
 
 <div class="wrap">
     <?php
+    if($id){
     NavBar::begin([
-        //'brandLabel' => Yii::$app->name,
+       
             'brandUrl' => Yii::$app->homeUrl  ,
         'brandUrl' => ['site/index'],
         'options' => [
@@ -36,5 +46,8 @@ use yii\bootstrap\Nav;
         'items' => $menuItems,
     ]);
     NavBar::end();
+    }if($home){
+       echo Url::to(['site/education']);
+    }
     ?>
     

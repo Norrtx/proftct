@@ -11,7 +11,7 @@ use frontend\assets\AppAsset;
 use common\widgets\Alert;
 use yii\helpers\Url;
 use common\models\personal;
-
+$id = Yii::$app->request->get('id');
 AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>

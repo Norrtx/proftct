@@ -50,11 +50,14 @@ class SiteController extends Controller
      * @return mixed
      */
     
- public function actionIndex($id)
-    {    echo 'action Index in site controller and ID ='.$id;
-        // $id = Yii::$app->user->identity->id;
+    public function actionIndex($id=null)
+    {       
+        echo 'action Index in site controller and ID ='.$id;
+        if ($id==null){
+            return $this->render('home');
+        }
         $personalModel = personal::find()->one();
-      
+
         return $this->render('index', [
             'personalModel' => $personalModel ,
         ]);
@@ -64,6 +67,11 @@ class SiteController extends Controller
     {
        
         return $this->render('port');
+    }
+    public function actionHome()
+    {
+       
+        return $this->render('home');
     }
  public function actionTeam()
     {

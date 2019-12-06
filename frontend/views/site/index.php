@@ -2,9 +2,12 @@
 
 /* @var $this yii\web\View */
 use yii\helpers\Url;
+use common\models\personal;
 Yii::$app->urlManager->createUrl(['site/index', 'id' => 4]);
 $this->title = 'resume';
-
+$id = Yii::$app->request->get('id');
+$personalModel=personal::find()->where(['user_id' => $id])
+->one();
 ?>
 <div class="site-index">
     <!-- About -->

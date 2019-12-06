@@ -8,7 +8,7 @@ use yii\helpers\Url;
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 use yii\captcha\Captcha;
-
+use common\models\personal;
 $this->title = 'Contact';
 
 ?>
