@@ -52,7 +52,6 @@ class SiteController extends Controller
     
     public function actionIndex($id=null)
     {       
-        echo 'action Index in site controller and ID ='.$id;
         if ($id==null){
             return $this->render('home');
         }
