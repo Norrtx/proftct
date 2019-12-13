@@ -111,7 +111,7 @@ class PersonalController extends Controller
                 }
             }
             $pro_img = UploadedFile::getInstanceByName('pro_img');
-            
+          
             if (isset($pro_img->error) && $pro_img->error == 0) {
                 $curFileName = $user_id . '_' . time() . '_';
                 $imageName = '.' . $pro_img->getExtension();
